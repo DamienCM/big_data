@@ -10,3 +10,6 @@ reduceur.py STDIN --> key count (presente, non presente)
 hadoop streaming : 
 echo data.csv | /home/hduser/mapper.py | sort -k1,1 | /home/hduser/reducer.py
 permet de compter l'occurence de chaque valeur
+
+
+more +2 "../generation_fichier/data.csv" > "data_modif.csv"

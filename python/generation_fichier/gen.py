@@ -19,7 +19,7 @@ CO=np.random.exponential(scale=1,size=taille_de_fichier)
 
 #Visualisation des distributions
 
-fig,axes=plt.subplots(4,1)
+"""fig,axes=plt.subplots(4,1)
 fig.set_size_inches(16,9)
 data=[O3,NO2,SO2,CO]
 labels=['O3','NO2','SO2','CO']
@@ -27,7 +27,7 @@ labels=['O3','NO2','SO2','CO']
 for i in range(len(labels)):
     axes[i].hist(data[i],bins=200,label=labels[i])
     axes[i].legend()
-fig.savefig('distribution.png',dpi=800)
+fig.savefig('distribution.png',dpi=800)"""
 
 np.savetxt(path,np.transpose([O3,NO2,SO2,CO]),delimiter=',',header=f'File generated on : {datetime.now()} by damien-mouad \n O3,NO2,SO2,CO')
 
