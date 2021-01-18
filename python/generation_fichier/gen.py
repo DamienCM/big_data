@@ -21,6 +21,6 @@ CO=np.random.exponential(scale=1,size=taille_de_fichier)
 
 
 
-np.savetxt(path,np.transpose([O3,NO2,SO2,CO]),delimiter=',',header=f'File generated on : {datetime.now()} by damien \n O3,NO2,SO2,CO')
+np.savetxt(path,np.transpose([O3,NO2,SO2,CO]),delimiter=',',header=f'File generated on : {datetime.now()} by damien-mouad \n O3,NO2,SO2,CO')
 
 print(f'Program executed in {time.time()-t0} seconds')
