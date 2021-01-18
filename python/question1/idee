@@ -1,0 +1,12 @@
+Question : 
+1. Compter le nombre de chaque type de métriques en considérant le seuil prédéfini. 
+
+C'est a dire compter le nombre de valeur depassant 0.5 dans chaque colonne.
+
+Idee : 
+mapper.py STDOUT  --> key  (presente, non_presente) : 1
+reduceur.py STDIN --> key count (presente, non presente)
+
+hadoop streaming : 
+echo data.csv | /home/hduser/mapper.py | sort -k1,1 | /home/hduser/reducer.py
+permet de compter l'occurence de chaque valeur

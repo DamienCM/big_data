@@ -1,0 +1,8 @@
+Question :
+3 - Pour chaque métrique, donner sa valeur minimale, sa valeur maximale et sa moyenne. 
+
+On peut proceder avec un mapper de la sorte
+
+affiche sur STDOUT a condition que la valeur soit superieure a .5
+0, valeur --> valeur non valide ( valeur < 0.5 )
+1, valeur --> valeur valide ( valeur > 0.5 )
