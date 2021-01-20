@@ -9,6 +9,9 @@ import time
 # SO : 200
 # etc
 
+# image de ce que l'on cherche a faire :
+# https://puu.sh/H8Gyg/fccf9b3f1b.png
+
 class Mapper(MRJob):
 
     def filter(self, key, ligne):
