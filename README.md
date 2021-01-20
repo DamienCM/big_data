@@ -1,4 +1,10 @@
-#Présentation du code
+# Présentation du code
+Le programme de génération de fichier se trouve dans le dossier gen. On génère des  
+données aléatoires suivants les lois de probabilités représentées dans la figure "distribution.png".
+On peut controler la taille du fichier.
+
+
+# Présentation du code
 
 Le code contenu dans ce dossier est un écrit en Python. Le code commenté contient 3 parties: <br/>
 * **Question 1 (partie 1)** : celle-ci répond à la question 1, à savoir compter tout les 
