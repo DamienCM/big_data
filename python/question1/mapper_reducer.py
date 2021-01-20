@@ -2,7 +2,7 @@ from mrjob.job import MRJob, MRStep
 
 
 class Mapper(MRJob):
-    def mapper(self, key, ligne):
+    def filter(self, key, ligne):
         el_ligne = ligne.split(',')
         keys = ['O3','NO2','SO2','CO']
         for i, element in enumerate(el_ligne):
@@ -11,14 +11,13 @@ class Mapper(MRJob):
                     yield (keys[i], 1)
             except ValueError:
                 pass
-
     def reducer(self, key, values):
         yield(key, sum(values))
 
 
 
     def steps(self):
-        return [MRStep(mapper=self.mapper, reducer=self.reducer)]
+        return [MRStep(mapper=self.filter), MRStep(reducer=self.reducer)]
 
 
 if __name__ == "__main__":
