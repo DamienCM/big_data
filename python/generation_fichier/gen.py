@@ -1,16 +1,16 @@
 import numpy as np
 import time 
 from datetime import datetime
-import matplotlib.pyplot as plt
-import pandas as pd
+#import matplotlib.pyplot as plt
+#import pandas as pd
 import os 
 
 
 t0=time.time()
 
-path='./data.csv'
+path= 'data_10GB.csv'
 
-nombre_de_kilo_ligne = 5000
+nombre_de_kilo_ligne = 40000
 
 taille_batch = 1_000
 

@@ -3,7 +3,7 @@ import time
 
 class Mapper(MRJob):
 
-    def filter(self, key, ligne):
+    def mapper(self, key, ligne):
         el_ligne = ligne.split(',') #recuperation des differentes mesures d'une ligne
         keys = ['O3', 'NO2', 'SO2', 'CO'] #cles valeurs des colonnes 
 
@@ -31,10 +31,8 @@ class Mapper(MRJob):
 
 
     def steps(self):
-        return [MRStep(mapper=self.filter,reducer=self.reducer)]
+        return [MRStep(mapper=self.mapper, reducer=self.reducer)]
 
 
 if __name__ == "__main__":
-    t0 = time.time() #calcul de temps
     Mapper.run()
-    print(f'Program executed in {time.time() - t0} seconds') #calcul de temps

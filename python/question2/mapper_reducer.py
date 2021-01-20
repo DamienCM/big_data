@@ -14,7 +14,7 @@ import time
 
 class Mapper(MRJob):
 
-    def filter(self, key, ligne):
+    def mapper(self, key, ligne):
         els_ligne = ligne.split(',') #recuperation des differentes mesures d'une ligne
         keys = ['O3', 'NO2', 'SO2', 'CO'] #cles valeurs des colonnes 
 
@@ -25,7 +25,7 @@ class Mapper(MRJob):
                 count = 0 #nombre de combinaison init= 0
                 for i2,v2 in enumerate(valeurs): #compare avec les autres valeurs de la ligne
                     if (v1 + v2) > 0.5 and i1 != i2 :
-                        count+=1
+                        count += 1
                 counts.append(count)
             yield "Combinaisons", counts #renvoie le nombre de combinaison 
 
@@ -41,10 +41,8 @@ class Mapper(MRJob):
 
 
     def steps(self):
-        return [MRStep(mapper=self.filter),MRStep(reducer=self.reducer)]
+        return [MRStep(mapper=self.mapper, reducer=self.reducer)]
 
 
 if __name__ == "__main__":
-    t0 = time.time()
     Mapper.run()
-    print(f'Program executed in {time.time() - t0} seconds')
